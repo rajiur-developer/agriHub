@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriHub - Agricultural Information Center</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-nav">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-flower1"></i> AgriHub
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./guides.html">Farming Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./crop.html">Crop Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./past-control.html">Pest Control</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact Experts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+      <div class="container hero-content">
+        <h1>Agricultural Information Hub</h1>
+        <p class="lead mb-4">
+          Your comprehensive guide to farming methods, crop management, and
+          sustainable agriculture.
+        </p>
+        <a href="#crops" class="btn btn-lg btn-success px-5 shadow"
+          >Explore Crops</a
+        >
+      </div>
+    </header>
+
+    <!-- Features Summary -->
+    <div class="container feature-cards-container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card feature-card text-center p-4">
+            <div class="card-body">
+              <i class="bi bi-book fs-1 text-success mb-3"></i>
+              <h4 class="card-title">Farming Guides</h4>
+              <p class="card-text text-muted">
+                Step-by-step instructions for soil prep and planting.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card feature-card text-center p-4">
+            <div class="card-body">
+              <i class="bi bi-tree fs-1 text-success mb-3"></i>
+              <h4 class="card-title">Crop Database</h4>
+              <p class="card-text text-muted">
+                Detailed profiles for Grains, Fruits, Veggies & Cash Crops.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card feature-card text-center p-4">
+            <div class="card-body">
+              <i class="bi bi-bug fs-1 text-success mb-3"></i>
+              <h4 class="card-title">Pest Control</h4>
+              <p class="card-text text-muted">
+                Identify and treat pests with organic strategies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CROP DETAILS SECTION -->
+    <section id="crops">
+      <div class="container">
+        <div class="section-header">
+          <h2>Crop Information Database</h2>
+          <p class="text-muted">
+            Comprehensive guides on cultivation, soil, and harvesting.
+          </p>
+        </div>
+
+        <!-- Category Filter -->
+        <ul
+          class="nav nav-pills justify-content-center mb-5"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="all-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-all"
+              type="button"
+            >
+              All Crops
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="grains-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-grains"
+              type="button"
+            >
+              Grains
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="fruits-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-fruits"
+              type="button"
+            >
+              Fruits
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="veg-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-veg"
+              type="button"
+            >
+              Vegetables
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="cash-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-cash"
+              type="button"
+            >
+              Cash Crops
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+          <!-- All Crops (Simplified View for Demo) -->
+          <div class="tab-pane fade show active" id="pills-all">
+            <div class="row g-4">
+              <!-- Wheat -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-grain">Grain</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      alt="Wheat"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Wheat</h5>
+                    <p class="card-text small text-muted">
+                      Staple cereal grain essential for flour and baking.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#wheatModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tomato -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-veg">Vegetable</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      alt="Tomato"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tomato</h5>
+                    <p class="card-text small text-muted">
+                      Versatile culinary vegetable rich in Lycopene.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#tomatoModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-fruit">Fruit</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Apple</h5>
+                    <p class="card-text small text-muted">
+                      Popular pome fruit grown in temperate zones.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#appleModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cotton -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-cash">Cash Crop</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Cotton</h5>
+                    <p class="card-text small text-muted">
+                      Fiber crop used primarily in the textile industry.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#cottonModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other tabs act as filters (Empty for demo structure, but would contain filtered cards) -->
+          <div class="tab-pane fade" id="pills-grains">
+            <div class="row g-4">
+              <!-- Wheat -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-grain">Grain</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      alt="Wheat"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Wheat</h5>
+                    <p class="card-text small text-muted">
+                      Staple cereal grain essential for flour and baking.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#wheatModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tomato -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-veg">Vegetable</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      alt="Tomato"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tomato</h5>
+                    <p class="card-text small text-muted">
+                      Versatile culinary vegetable rich in Lycopene.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#tomatoModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-fruit">Fruit</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Apple</h5>
+                    <p class="card-text small text-muted">
+                      Popular pome fruit grown in temperate zones.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#appleModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cotton -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-cash">Cash Crop</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Cotton</h5>
+                    <p class="card-text small text-muted">
+                      Fiber crop used primarily in the textile industry.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#cottonModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-fruits">
+            <div class="row g-4">
+              <!-- Wheat -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-grain">Grain</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      alt="Wheat"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Wheat</h5>
+                    <p class="card-text small text-muted">
+                      Staple cereal grain essential for flour and baking.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#wheatModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tomato -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-veg">Vegetable</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      alt="Tomato"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tomato</h5>
+                    <p class="card-text small text-muted">
+                      Versatile culinary vegetable rich in Lycopene.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#tomatoModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-fruit">Fruit</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Apple</h5>
+                    <p class="card-text small text-muted">
+                      Popular pome fruit grown in temperate zones.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#appleModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cotton -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-cash">Cash Crop</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Cotton</h5>
+                    <p class="card-text small text-muted">
+                      Fiber crop used primarily in the textile industry.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#cottonModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-veg">
+            <div class="row g-4">
+              <!-- Wheat -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-grain">Grain</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      alt="Wheat"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Wheat</h5>
+                    <p class="card-text small text-muted">
+                      Staple cereal grain essential for flour and baking.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#wheatModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tomato -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-veg">Vegetable</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      alt="Tomato"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tomato</h5>
+                    <p class="card-text small text-muted">
+                      Versatile culinary vegetable rich in Lycopene.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#tomatoModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-fruit">Fruit</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Apple</h5>
+                    <p class="card-text small text-muted">
+                      Popular pome fruit grown in temperate zones.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#appleModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cotton -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-cash">Cash Crop</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Cotton</h5>
+                    <p class="card-text small text-muted">
+                      Fiber crop used primarily in the textile industry.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#cottonModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-cash">
+            <div class="row g-4">
+              <!-- Wheat -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-grain">Grain</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      alt="Wheat"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Wheat</h5>
+                    <p class="card-text small text-muted">
+                      Staple cereal grain essential for flour and baking.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#wheatModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tomato -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-veg">Vegetable</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      alt="Tomato"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tomato</h5>
+                    <p class="card-text small text-muted">
+                      Versatile culinary vegetable rich in Lycopene.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#tomatoModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-fruit">Fruit</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Apple</h5>
+                    <p class="card-text small text-muted">
+                      Popular pome fruit grown in temperate zones.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#appleModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cotton -->
+              <div class="col-md-6 col-lg-3">
+                <div class="card crop-card h-100">
+                  <div class="crop-img-wrapper">
+                    <span class="category-badge bg-cash">Cash Crop</span>
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      alt="Apple"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Cotton</h5>
+                    <p class="card-text small text-muted">
+                      Fiber crop used primarily in the textile industry.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm w-100 mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#cottonModal"
+                    >
+                      View Guide
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h5>Connect</h5>
+            <div class="d-flex gap-3 justify-content-center">
+              <a href="#" class="text-white"
+                ><i class="bi bi-facebook fs-5"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="bi bi-twitter fs-5"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="bi bi-instagram fs-5"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="bi bi-youtube fs-5"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary" />
+        <div class="text-center small">
+          &copy; <span id="year"></span> Agricultural Information Hub. All
+          rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

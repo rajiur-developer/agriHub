@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriHub - Agricultural Information Center</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-nav">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-flower1"></i> AgriHub
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./guides.html">Farming Guides</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./crop.html">Crop Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./past-control.html">Pest Control</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact Experts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+      <div class="container hero-content">
+        <h1>Empowering Farmers, <br />Feeding the Future</h1>
+        <p class="lead mb-4">
+          Your comprehensive resource for detailed guides, crop management, and
+          expert agricultural advice.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#guides" class="btn btn-lg btn-success">Start Learning</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features Summary -->
+    <div
+      class="container mt-n5 position-relative"
+      style="z-index: 2; margin-top: -50px"
+    >
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card text-center p-4 h-100">
+            <div class="card-body">
+              <i class="bi bi-book fs-1 text-success mb-3"></i>
+              <h4 class="card-title">Expert Guides</h4>
+              <p class="card-text">
+                Step-by-step tutorials on modern farming techniques and soil
+                preparation.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center p-4 h-100">
+            <div class="card-body">
+              <i class="bi bi-tree fs-1 text-success mb-3"></i>
+              <h4 class="card-title">Crop Database</h4>
+              <p class="card-text">
+                Detailed requirements for grains, fruits, and vegetables.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center p-4 h-100">
+            <div class="card-body">
+              <i class="bi bi-bug fs-1 text-success mb-3"></i>
+              <h4 class="card-title">Pest Management</h4>
+              <p class="card-text">
+                Strategies to protect your yield using biological and organic
+                controls.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Farming Guides Section -->
+    <section id="guides">
+      <div class="container">
+        <div class="section-header">
+          <h2>Farming Guides</h2>
+          <p class="text-muted">
+            Master the art of agriculture with our curated methodologies.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="accordion" id="guidesAccordion">
+              <!-- Guide 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#guide1"
+                  >
+                    <i class="bi bi-droplet-fill me-2 text-primary"></i>
+                    Sustainable Irrigation Techniques
+                  </button>
+                </h2>
+                <div
+                  id="guide1"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#guidesAccordion"
+                >
+                  <div class="accordion-body">
+                    <span class="badge bg-info mb-2">Water Management</span>
+                    <p>
+                      <strong>Summary:</strong> Learn how to maximize water
+                      efficiency using drip irrigation.
+                    </p>
+                    <ol>
+                      <li>Assess soil moisture levels using a tensiometer.</li>
+                      <li>
+                        Install drip lines along crop rows, ensuring emitters
+                        are near the root zone.
+                      </li>
+                      <li>
+                        Schedule watering during early morning or late evening
+                        to reduce evaporation.
+                      </li>
+                      <li>Monitor system for leaks and cloggs weekly.</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guide 2 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#guide2"
+                  >
+                    <i class="bi bi-recycle me-2 text-success"></i> Organic Soil
+                    Preparation
+                  </button>
+                </h2>
+                <div
+                  id="guide2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#guidesAccordion"
+                >
+                  <div class="accordion-body">
+                    <span class="badge bg-success mb-2">Soil Health</span>
+                    <p>
+                      <strong>Summary:</strong> Preparing nutrient-rich soil
+                      without synthetic chemicals.
+                    </p>
+                    <ol>
+                      <li>Test soil pH and nutrient levels.</li>
+                      <li>
+                        Apply compost or well-rotted manure (2-3 inches top
+                        layer).
+                      </li>
+                      <li>
+                        Practice crop rotation to prevent nutrient depletion.
+                      </li>
+                      <li>
+                        Use cover crops (like clover) during off-seasons to fix
+                        nitrogen.
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guide 3 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#guide3"
+                  >
+                    <i class="bi bi-calendar3 me-2 text-warning"></i> Seasonal
+                    Planting Calendar
+                  </button>
+                </h2>
+                <div
+                  id="guide3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#guidesAccordion"
+                >
+                  <div class="accordion-body">
+                    <span class="badge bg-warning text-dark mb-2"
+                      >Planning</span
+                    >
+                    <p>Understanding when to plant is crucial for yield.</p>
+                    <ul>
+                      <li>
+                        <strong>Spring:</strong> Leafy greens, peas, radishes.
+                      </li>
+                      <li>
+                        <strong>Summer:</strong> Tomatoes, peppers, corn,
+                        melons.
+                      </li>
+                      <li>
+                        <strong>Fall:</strong> Root vegetables, garlic, winter
+                        wheat.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crop Details Section -->
+    <section id="crops" class="bg-white">
+      <div class="container">
+        <div class="section-header">
+          <h2>Crop Details</h2>
+          <p class="text-muted">
+            Comprehensive profiles for major crop categories.
+          </p>
+        </div>
+
+        <!-- Crop Filter Tabs -->
+        <ul
+          class="nav nav-pills justify-content-center mb-5"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active rounded-pill"
+              id="all-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-all"
+              type="button"
+            >
+              All Crops
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link rounded-pill"
+              id="grains-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-grains"
+              type="button"
+            >
+              Grains
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link rounded-pill"
+              id="fruits-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-fruits"
+              type="button"
+            >
+              Fruits
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link rounded-pill"
+              id="veg-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-veg"
+              type="button"
+            >
+              Vegetables
+            </button>
+          </li>
+        </ul>
+
+        <!-- Crop Content -->
+        <div class="tab-content" id="pills-tabContent">
+          <!-- All/Mixed View -->
+          <div class="tab-pane fade show active" id="pills-all">
+            <div class="row g-4">
+              <!-- Wheat Card -->
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                    class="card-img-top"
+                    alt="Wheat"
+                  />
+                  <div class="card-body">
+                    <span class="badge bg-secondary mb-2">Grain</span>
+                    <h5 class="card-title">Wheat</h5>
+                    <p class="card-text">
+                      A staple cereal grain worldwide. Requires well-drained
+                      loam soil.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#wheatModal"
+                    >
+                      View Full Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tomato Card -->
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                    class="card-img-top"
+                    alt="Tomato"
+                  />
+                  <div class="card-body">
+                    <span class="badge bg-danger mb-2">Vegetable</span>
+                    <h5 class="card-title">Tomato</h5>
+                    <p class="card-text">
+                      Warm-season crop perfect for home gardens and commercial
+                      farming.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#tomatoModal"
+                    >
+                      View Full Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple Card -->
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <img
+                    src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                    class="card-img-top"
+                    alt="Apple"
+                  />
+                  <div class="card-body">
+                    <span class="badge bg-warning text-dark mb-2">Fruit</span>
+                    <h5 class="card-title">Apple</h5>
+                    <p class="card-text">
+                      Perennial tree fruit requiring cold dormancy and pruning.
+                    </p>
+                    <button
+                      class="btn btn-outline-success btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#appleModal"
+                    >
+                      View Full Profile
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Note: Additional tab panes (grains, fruits, veg) would filter the above content in a real backend app. For this static demo, 'All' shows examples. -->
+          <div class="tab-pane fade" id="pills-grains">
+            <div class="alert alert-light text-center">
+              <div class="row g-4">
+                <!-- Wheat Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Wheat"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-secondary mb-2">Grain</span>
+                      <h5 class="card-title">Wheat</h5>
+                      <p class="card-text">
+                        A staple cereal grain worldwide. Requires well-drained
+                        loam soil.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#wheatModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tomato Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Tomato"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-danger mb-2">Vegetable</span>
+                      <h5 class="card-title">Tomato</h5>
+                      <p class="card-text">
+                        Warm-season crop perfect for home gardens and commercial
+                        farming.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#tomatoModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Apple Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Apple"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-warning text-dark mb-2">Fruit</span>
+                      <h5 class="card-title">Apple</h5>
+                      <p class="card-text">
+                        Perennial tree fruit requiring cold dormancy and
+                        pruning.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#appleModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-fruits">
+            <div class="alert alert-light text-center">
+              <div class="row g-4">
+                <!-- Wheat Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Wheat"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-secondary mb-2">Grain</span>
+                      <h5 class="card-title">Wheat</h5>
+                      <p class="card-text">
+                        A staple cereal grain worldwide. Requires well-drained
+                        loam soil.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#wheatModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tomato Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Tomato"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-danger mb-2">Vegetable</span>
+                      <h5 class="card-title">Tomato</h5>
+                      <p class="card-text">
+                        Warm-season crop perfect for home gardens and commercial
+                        farming.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#tomatoModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Apple Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Apple"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-warning text-dark mb-2">Fruit</span>
+                      <h5 class="card-title">Apple</h5>
+                      <p class="card-text">
+                        Perennial tree fruit requiring cold dormancy and
+                        pruning.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#appleModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-veg">
+            <div class="alert alert-light text-center">
+              <div class="row g-4">
+                <!-- Wheat Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Wheat"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-secondary mb-2">Grain</span>
+                      <h5 class="card-title">Wheat</h5>
+                      <p class="card-text">
+                        A staple cereal grain worldwide. Requires well-drained
+                        loam soil.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#wheatModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tomato Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Tomato"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-danger mb-2">Vegetable</span>
+                      <h5 class="card-title">Tomato</h5>
+                      <p class="card-text">
+                        Warm-season crop perfect for home gardens and commercial
+                        farming.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#tomatoModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Apple Card -->
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <img
+                      src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80"
+                      class="card-img-top"
+                      alt="Apple"
+                    />
+                    <div class="card-body">
+                      <span class="badge bg-warning text-dark mb-2">Fruit</span>
+                      <h5 class="card-title">Apple</h5>
+                      <p class="card-text">
+                        Perennial tree fruit requiring cold dormancy and
+                        pruning.
+                      </p>
+                      <button
+                        class="btn btn-outline-success btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#appleModal"
+                      >
+                        View Full Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pest Control Section -->
+    <section id="pests" style="background-color: #e9ecef">
+      <div class="container">
+        <div class="section-header">
+          <h2>Pest Control Strategies</h2>
+          <p class="text-muted">
+            Integrated Pest Management (IPM) for healthy crops.
+          </p>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80"
+              alt="Ladybug"
+              class="img-fluid rounded shadow"
+            />
+            <p class="text-muted text-center mt-2 small">
+              Biological control: Ladybugs eating aphids.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="list-group">
+              <div
+                class="list-group-item list-group-item-action flex-column align-items-start pest-card mb-3 shadow-sm border-0"
+              >
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">
+                    <i class="bi bi-shield-check text-success"></i> Monitoring &
+                    Detection
+                  </h5>
+                </div>
+                <p class="mb-1">
+                  Regular scouting of fields is the first line of defense. Use
+                  pheromone traps to detect insect populations early before they
+                  cause economic damage.
+                </p>
+              </div>
+
+              <div
+                class="list-group-item list-group-item-action flex-column align-items-start pest-card mb-3 shadow-sm border-0"
+              >
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">
+                    <i class="bi bi-flower2 text-warning"></i> Biological
+                    Control
+                  </h5>
+                </div>
+                <p class="mb-1">
+                  Encourage natural predators. For example, introducing
+                  parasitic wasps or ladybugs can naturally reduce aphid and
+                  caterpillar populations without chemicals.
+                </p>
+              </div>
+
+              <div
+                class="list-group-item list-group-item-action flex-column align-items-start pest-card mb-3 shadow-sm border-0"
+              >
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">
+                    <i class="bi bi-spray-bottle text-danger"></i> Organic
+                    Remedies
+                  </h5>
+                </div>
+                <p class="mb-1">
+                  Use Neem oil, insecticidal soaps, or diatomaceous earth. These
+                  are effective against soft-bodied insects while causing
+                  minimal harm to the environment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h5>Connect</h5>
+            <div class="d-flex gap-3 justify-content-center">
+              <a href="#" class="text-white"
+                ><i class="bi bi-facebook fs-5"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="bi bi-twitter fs-5"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="bi bi-instagram fs-5"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="bi bi-youtube fs-5"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="border-secondary" />
+        <div class="text-center small">
+          &copy; <span id="year"></span> Agricultural Information Hub. All
+          rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
